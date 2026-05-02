@@ -278,12 +278,15 @@ function startRec(){
       setStep(2);
     };
     mediaRec.start(); recOn=true;
-    document.getElementById("btnMic").style.display="flex";document.getElementById("btnMic").className="B Brec rec";
+    document.getElementById("btnMic").style.display="flex";
+    document.getElementById("btnMic").className="B Brec rec";
     document.getElementById("mIco").textContent="||";
     document.getElementById("mLbl").textContent="Merekam... Tap untuk berhenti";
     document.getElementById("bubble").textContent="Aku mendengarkan... bacalah!";
   }).catch(function(){
+    document.getElementById("btnMic").style.display="none";
     document.getElementById("btnSudah").style.display="flex";
+    document.getElementById("bubble").textContent="Tidak bisa rekam, tap Sudah untuk lanjut!";
     setStep(2);
   });
 }
