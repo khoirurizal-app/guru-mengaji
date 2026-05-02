@@ -318,7 +318,17 @@ function loadSeg(){
   document.getElementById("atr").textContent=seg.arti;
   document.getElementById("pLbl").textContent=isBismillah?"Dengarkan Bismillah":"Dengarkan Miss Diah";
   document.getElementById("bubble").textContent="Bismillah, yuk mulai!";
-  buildProg(); setTimeout(guruPlay,800);
+  document.getElementById("btnMic").style.display="none";
+  document.getElementById("btnSudah").style.display="none";
+  document.getElementById("btnNext").style.display="none";
+  buildProg();
+  setTimeout(guruPlay,800);
+  if(S[ci].type==="ayat"){
+    setTimeout(function(){
+      document.getElementById("btnMic").style.display="flex";
+      setStep(1);
+    },1500);
+  }
 }
 function buildProg(){
   var r=document.getElementById("prow"); r.innerHTML="";
