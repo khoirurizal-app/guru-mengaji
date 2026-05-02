@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Miss Diah - Surah Al-Fatihah</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Nunito",sans-serif;min-height:100vh;background:#1b4332}
+#pg-splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#1b4332,#2d6a4f);padding:30px;text-align:center}
+.s-ar{font-family:"Amiri",serif;font-size:36px;color:#e9c46a;margin-bottom:10px}
+.s-h1{color:white;font-size:24px;font-weight:800;margin-bottom:4px}
+.s-sub{color:#e9c46a;font-size:14px;font-weight:700;margin-bottom:4px}
+.s-p{color:#a8d5c2;font-size:13px;margin-bottom:34px}
+#btnStart{background:#e9c46a;color:#3d2800;border:none;border-radius:50px;padding:20px 48px;font-family:"Nunito",sans-serif;font-size:19px;font-weight:800;cursor:pointer;animation:kb 1.6s ease-in-out infinite}
+@keyframes kb{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.home-link{display:inline-block;margin-top:16px;color:#a8d5c2;font-size:12px;cursor:pointer;text-decoration:underline}
+#pg-main{display:none;min-height:100vh;background:linear-gradient(150deg,#e8f4f0,#f0e8f4,#e8eef4);padding:14px}
+#pg-pbk{display:none;min-height:100vh;background:linear-gradient(150deg,#1b4332,#2d6a4f);padding:14px}
+#pg-ujian{display:none;min-height:100vh;background:linear-gradient(150deg,#e8f4f0,#f0e8f4);padding:14px}
+#pg-win{display:none;min-height:100vh;background:linear-gradient(160deg,#1b4332,#2d6a4f);padding:20px;text-align:center}
+.W{max-width:480px;margin:0 auto}
+.hdr{text-align:center;margin-bottom:10px}
+.hdr h1{font-size:16px;font-weight:800;color:#2d6a4f}
+.hdr p{font-size:10px;color:#52796f;font-weight:600}
+.badge{display:inline-block;background:#d8f3dc;color:#1b4332;border-radius:20px;padding:3px 12px;font-size:10px;font-weight:800;margin-top:3px;border:1px solid #52b788}
+.prow{display:flex;gap:4px;justify-content:center;margin-bottom:10px;flex-wrap:wrap}
+.pd{width:26px;height:26px;border-radius:50%;border:2px solid #a8d5c2;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#84a98c;background:white;transition:all .25s}
+.pd.cur{background:#2d6a4f;border-color:#2d6a4f;color:white;transform:scale(1.15)}
+.pd.done{background:#52b788;border-color:#52b788;color:white}
+.guru-row{display:flex;gap:10px;align-items:flex-end;margin-bottom:10px}
+.vwrap{width:120px;height:120px;flex-shrink:0;border-radius:16px;overflow:hidden;background:#1b4332;position:relative}
+.vwrap video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.bubble{background:white;border-radius:13px;padding:9px 12px;font-size:11.5px;font-weight:700;color:#2d6a4f;border:1.5px solid #a8d5c2;line-height:1.6;min-height:56px;flex:1}
+.bubble.happy{border-color:#52b788;background:#f0fff4;color:#1b4332}
+.card{background:white;border-radius:15px;padding:13px;border:1.5px solid #a8d5c2;margin-bottom:9px}
+.step-box{border-radius:10px;padding:8px 12px;margin-bottom:8px;font-size:11px;font-weight:700;text-align:center}
+.s1{background:#e8f4f0;color:#2d6a4f;border:1px solid #a8d5c2}
+.s2{background:#fff8e8;color:#7c4a00;border:1px solid #e9c46a}
+.s3{background:#e8eef4;color:#2d496a;border:1px solid #a8b5c2}
+.arow{display:flex;align-items:center;margin-bottom:6px}
+.anum{background:#a8d5c2;color:#1b4332;border-radius:50%;width:21px;height:21px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;margin-right:6px;flex-shrink:0}
+.a-ar{font-family:"Amiri",serif;font-size:24px;text-align:right;direction:rtl;color:#2d6a4f;line-height:1.9;margin-bottom:4px}
+.a-lt{font-size:11px;color:#52796f;font-style:italic;margin-bottom:2px}
+.a-tr{font-size:10px;color:#84a98c;font-weight:600}
+.B{width:100%;padding:15px;border:none;border-radius:13px;font-family:"Nunito",sans-serif;font-size:15px;font-weight:800;cursor:pointer;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:9px;min-height:54px;transition:all .15s}
+.B:active{transform:scale(.97)}
+.Bg{background:#2d6a4f;color:white}
+.Bg.playing{background:#c1121f}
+.Bred{background:#d62828;color:white}
+.Bred.rec{animation:pm .9s ease-in-out infinite}
+@keyframes pm{0%,100%{box-shadow:0 4px 14px rgba(214,40,40,.4)}50%{box-shadow:0 4px 26px rgba(214,40,40,.7),0 0 0 8px rgba(214,40,40,.12)}}
+.Bgreen{background:#52b788;color:white}
+.Bn{background:#2d6a4f;color:white;display:none}
+.Bn.sh{display:flex}
+.waves{display:none;gap:3px;align-items:center}
+.Bg.playing .waves{display:flex}
+.wb{width:3px;border-radius:2px;background:white;animation:sw .5s ease-in-out infinite}
+.wb:nth-child(1){height:6px}.wb:nth-child(2){height:14px;animation-delay:.1s}.wb:nth-child(3){height:8px;animation-delay:.2s}.wb:nth-child(4){height:16px;animation-delay:.05s}.wb:nth-child(5){height:6px;animation-delay:.15s}
+@keyframes sw{0%,100%{transform:scaleY(1)}50%{transform:scaleY(2)}}
+.pb-hdr{color:white;text-align:center;margin-bottom:14px}
+.pb-hdr h2{font-size:18px;font-weight:800;margin-bottom:4px}
+.pb-hdr p{font-size:12px;color:#a8d5c2}
+.pb-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.pb-item{background:rgba(255,255,255,.12);border-radius:12px;padding:11px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;border:1px solid rgba(255,255,255,.15);transition:background .2s}
+.pb-item.playing{background:rgba(233,196,106,.25);border-color:#e9c46a}
+.pb-num{width:32px;height:32px;border-radius:50%;background:#e9c46a;color:#3d2800;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.pb-info{flex:1}
+.pb-title{color:white;font-size:12px;font-weight:700}
+.pb-sub{color:#a8d5c2;font-size:10px;margin-top:2px}
+.pb-icon{font-size:18px}
+.pb-wave{display:none;gap:2px;align-items:center}
+.pb-item.playing .pb-wave{display:flex}
+.pb-item.playing .pb-icon{display:none}
+.rw{width:3px;height:14px;border-radius:2px;background:#e9c46a;animation:sw .5s ease-in-out infinite}
+.rw:nth-child(2){animation-delay:.1s;height:20px}.rw:nth-child(3){animation-delay:.2s;height:10px}.rw:nth-child(4){animation-delay:.05s;height:18px}
+.ulang-card{background:white;border-radius:15px;padding:15px;border:1.5px solid #a8d5c2;margin-bottom:10px;text-align:center}
+.full-ar{font-family:"Amiri",serif;font-size:20px;text-align:right;direction:rtl;color:#2d6a4f;line-height:2.1}
+#pg-win h1{color:#e9c46a;font-size:24px;font-weight:800;margin-bottom:8px;margin-top:16px}
+#pg-win p{color:#a8d5c2;font-size:13px;margin-bottom:20px;line-height:1.7}
+.cfw{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;display:none}
+.cfp{position:absolute;width:9px;height:9px;border-radius:2px;animation:cfall 2.5s ease-in forwards}
+@keyframes cfall{0%{opacity:1;transform:translateY(-10px) rotate(0)}100%{opacity:0;transform:translateY(105vh) rotate(720deg)}}
+#fwCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997;display:none}
+</style>
+</head>
+<body>
+<div id="pg-splash">
+  <div class="s-ar">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x641;&#x627;&#x62a;&#x62d;&#x629;</div>
+  <div class="s-h1">Guru Mengaji AI</div>
+  <div class="s-sub">Miss Diah</div>
+  <div class="s-p">Surah Al-Fatihah</div>
+  <button id="btnStart">MULAI BELAJAR</button>
+  <div class="home-link" onclick="location.href='index.html'">&#8592; Kembali ke Menu</div>
+</div>
+<div id="pg-main"><div class="W">
+  <div class="hdr"><h1>Guru Mengaji AI - Miss Diah</h1><p>Surah Al-Fatihah</p><div class="badge">Surah Al-Fatihah</div></div>
+  <div class="prow" id="prow"></div>
+  <div class="guru-row">
+    <div class="vwrap"><video id="vS" loop muted playsinline webkit-playsinline preload="auto"></video><video id="vT" muted playsinline webkit-playsinline preload="auto" style="display:none"></video></div>
+    <div class="bubble" id="bubble">Yuk hafal Surah Al-Fatihah bersama Miss Diah!</div>
+  </div>
+  <div class="step-box s1" id="stepBox">&#128266; Langkah 1: Dengarkan Miss Diah</div>
+  <div class="card">
+    <div class="arow"><div class="anum" id="anum">B</div><span style="font-size:10px;color:#84a98c;font-weight:600" id="albl">Pembuka</span></div>
+    <div class="a-ar" id="aar"></div>
+    <div class="a-lt" id="alt"></div>
+    <div class="a-tr" id="atr"></div>
+  </div>
+  <button class="B Bg" id="btnPlay" onclick="guruPlay()">
+    <span id="pIco">&#128266;</span><span id="pLbl">Dengarkan Miss Diah</span>
+    <span class="waves"><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span></span>
+  </button>
+  <button class="B Bred" id="btnMic" onclick="toggleMic()" style="display:none">
+    <span id="mIco">&#127908;</span><span id="mLbl">Rekam Suaramu!</span>
+  </button>
+  <button class="B Bgreen" id="btnSudah" onclick="sudahBaca()" style="display:none">&#9989; Sudah! Lanjut!</button>
+  <button class="B Bn" id="btnNext" onclick="nextSeg()"><span id="nLbl">Lanjut</span></button>
+</div></div>
+<div id="pg-pbk"><div class="W">
+  <div class="pb-hdr"><div style="font-size:50px;margin-bottom:8px">&#127908;</div><h2>Dengarkan Suaramu!</h2><p>Yuk dengarkan rekaman tadi!</p></div>
+  <div class="pb-list" id="pbList"></div>
+  <button class="B" style="background:#e9c46a;color:#3d2800" onclick="goUjian()">Lanjut ke Ujian Hafalan &#8594;</button>
+</div></div>
+<div id="pg-ujian"><div class="W">
+  <div class="hdr" style="margin-bottom:12px"><h1>Ujian Hafalan!</h1><p>Baca sendiri dari awal sampai akhir!</p></div>
+  <div class="guru-row">
+    <div class="vwrap"><video id="vS2" loop muted playsinline webkit-playsinline preload="auto"></video></div>
+    <div class="bubble">Bismillah! Baca sendiri dari awal ya!</div>
+  </div>
+  <div class="ulang-card">
+    <div style="font-size:12px;font-weight:800;color:#1b4332;margin-bottom:8px">Surah Al-Fatihah</div>
+    <div class="full-ar">&#x628;&#x650;&#x633;&#x652;&#x645;&#x650; &#x627;&#x644;&#x644;&#x651;&#x647;&#x650; &#x627;&#x644;&#x631;&#x651;&#x64e;&#x62d;&#x652;&#x645;&#x670;&#x646;&#x650; &#x627;&#x644;&#x631;&#x651;&#x64e;&#x62d;&#x650;&#x64a;&#x645;&#x650;<br>&#x627;&#x644;&#x652;&#x62d;&#x64e;&#x645;&#x652;&#x62f;&#x64f; &#x644;&#x650;&#x644;&#x651;&#x647;&#x650; &#x631;&#x64e;&#x628;&#x651;&#x650; &#x627;&#x644;&#x652;&#x639;&#x64e;&#x627;&#x644;&#x64e;&#x645;&#x650;&#x64a;&#x646;&#x64e; (1)<br>&#x627;&#x644;&#x631;&#x651;&#x64e;&#x62d;&#x652;&#x645;&#x670;&#x646;&#x650; &#x627;&#x644;&#x631;&#x651;&#x64e;&#x62d;&#x650;&#x64a;&#x645;&#x650; (2)<br>&#x645;&#x64e;&#x627;&#x644;&#x650;&#x643;&#x650; &#x64a;&#x64e;&#x648;&#x652;&#x645;&#x650; &#x627;&#x644;&#x62f;&#x651;&#x650;&#x64a;&#x646;&#x650; (3)<br>&#x625;&#x650;&#x64a;&#x651;&#x64e;&#x627;&#x643;&#x64e; &#x646;&#x64e;&#x639;&#x652;&#x628;&#x64f;&#x62f;&#x64f; &#x648;&#x64e;&#x625;&#x650;&#x64a;&#x651;&#x64e;&#x627;&#x643;&#x64e; &#x646;&#x64e;&#x633;&#x652;&#x62a;&#x64e;&#x639;&#x650;&#x64a;&#x646;&#x64f; (4)<br>&#x627;&#x647;&#x652;&#x62f;&#x650;&#x646;&#x64e;&#x627; &#x627;&#x644;&#x635;&#x651;&#x650;&#x631;&#x64e;&#x627;&#x637;&#x64e; &#x627;&#x644;&#x652;&#x645;&#x64f;&#x633;&#x652;&#x62a;&#x64e;&#x642;&#x650;&#x64a;&#x645;&#x64e; (5)<br>&#x635;&#x650;&#x631;&#x64e;&#x627;&#x637;&#x64e; &#x627;&#x644;&#x651;&#x64e;&#x630;&#x650;&#x64a;&#x646;&#x64e; &#x623;&#x64e;&#x646;&#x652;&#x639;&#x64e;&#x645;&#x652;&#x62a;&#x64e; &#x639;&#x64e;&#x644;&#x64e;&#x64a;&#x652;&#x647;&#x650;&#x645;&#x652; &#x63a;&#x64e;&#x64a;&#x652;&#x631;&#x650; &#x627;&#x644;&#x652;&#x645;&#x64e;&#x63a;&#x652;&#x636;&#x64f;&#x648;&#x628;&#x650; &#x639;&#x64e;&#x644;&#x64e;&#x64a;&#x652;&#x647;&#x650;&#x645;&#x652; &#x648;&#x64e;&#x644;&#x64e;&#x627; &#x627;&#x644;&#x636;&#x651;&#x64e;&#x627;&#x644;&#x651;&#x650;&#x64a;&#x646;&#x64e; (6-7)</div>
+    <div style="font-size:10px;color:#84a98c;font-weight:600;margin-top:8px">Baca keras-keras!</div>
+  </div>
+  <button class="B Bg" onclick="selesaiUjian()">&#9989; Selesai Saya Sudah Baca!</button>
+</div></div>
+<div id="pg-win">
+  <div style="font-size:70px">&#127878;</div>
+  <h1>Masya Allah! Selamat!</h1>
+  <p>Adik sudah hafal<br><strong style="color:#e9c46a;font-size:16px">Surah Al-Fatihah</strong>!<br><br>Alhamdulillah!</p>
+  <button class="B Bg" style="max-width:320px;margin:0 auto" onclick="window.location.href="falaq.html"">Lanjut &#8594;</button>
+  <br><div class="home-link" onclick="location.href='index.html'">&#8592; Menu</div>
+</div>
+<canvas id="fwCanvas"></canvas>
+<div class="cfw" id="cfw"></div>
+<script>
+var S=[{"id": "bismillah", "type": "intro", "arabic": "\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u064e\u0651\u0647\u0650 \u0627\u0644\u0631\u064e\u0651\u062d\u0652\u0645\u064e\u0670\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062d\u0650\u064a\u0645\u0650", "latin": "Bismillaahir rahmaanir rahiim", "arti": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang", "audio_idx": 0}, {"id": "ayat1", "num": 1, "type": "ayat", "arabic": "\u0627\u0644\u0652\u062d\u064e\u0645\u0652\u062f\u064f \u0644\u0650\u0644\u064e\u0651\u0647\u0650 \u0631\u064e\u0628\u0650\u0651 \u0627\u0644\u0652\u0639\u064e\u0627\u0644\u064e\u0645\u0650\u064a\u0646\u064e", "latin": "Alhamdu lillaahi rabbil aalamiin", "arti": "Segala puji bagi Allah, Tuhan semesta alam", "audio_idx": 1, "keywords": ["alhamdu", "lillahi", "rabbil", "alamin"]}, {"id": "ayat2", "num": 2, "type": "ayat", "arabic": "\u0627\u0644\u0631\u064e\u0651\u062d\u0652\u0645\u064e\u0670\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062d\u0650\u064a\u0645\u0650", "latin": "Ar rahmaanir rahiim", "arti": "Yang Maha Pengasih, Maha Penyayang", "audio_idx": 2, "keywords": ["rahman", "rahim"]}, {"id": "ayat3", "num": 3, "type": "ayat", "arabic": "\u0645\u064e\u0627\u0644\u0650\u0643\u0650 \u064a\u064e\u0648\u0652\u0645\u0650 \u0627\u0644\u062f\u0650\u0651\u064a\u0646\u0650", "latin": "Maaliki yaumid diin", "arti": "Pemilik hari pembalasan", "audio_idx": 3, "keywords": ["maliki", "yaumid", "din"]}, {"id": "ayat4", "num": 4, "type": "ayat", "arabic": "\u0625\u0650\u064a\u064e\u0651\u0627\u0643\u064e \u0646\u064e\u0639\u0652\u0628\u064f\u062f\u064f \u0648\u064e\u0625\u0650\u064a\u064e\u0651\u0627\u0643\u064e \u0646\u064e\u0633\u0652\u062a\u064e\u0639\u0650\u064a\u0646\u064f", "latin": "Iyyaaka nabudu wa iyyaaka nastain", "arti": "Hanya kepada Engkau kami menyembah dan memohon pertolongan", "audio_idx": 4, "keywords": ["iyyaka", "nabudu", "nastain"]}, {"id": "ayat5", "num": 5, "type": "ayat", "arabic": "\u0627\u0647\u0652\u062f\u0650\u0646\u064e\u0627 \u0627\u0644\u0635\u0650\u0651\u0631\u064e\u0627\u0637\u064e \u0627\u0644\u0652\u0645\u064f\u0633\u0652\u062a\u064e\u0642\u0650\u064a\u0645\u064e", "latin": "Ihdinash shiraathal mustaqiim", "arti": "Tunjukilah kami jalan yang lurus", "audio_idx": 5, "keywords": ["ihdina", "sirat", "mustaqim"]}, {"id": "ayat67", "num": "6-7", "type": "ayat", "arabic": "\u0635\u0650\u0631\u064e\u0627\u0637\u064e \u0627\u0644\u064e\u0651\u0630\u0650\u064a\u0646\u064e \u0623\u064e\u0646\u0652\u0639\u064e\u0645\u0652\u062a\u064e \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650\u0645\u0652 \u063a\u064e\u064a\u0652\u0631\u0650 \u0627\u0644\u0652\u0645\u064e\u063a\u0652\u0636\u064f\u0648\u0628\u0650 \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650\u0645\u0652 \u0648\u064e\u0644\u064e\u0627 \u0627\u0644\u0636\u064e\u0651\u0627\u0644\u0650\u0651\u064a\u0646\u064e", "latin": "Shiraathal ladziina anamta alayhim ghayril maghdhuubi alayhim waladh dhaalliin", "arti": "Jalan orang yang Engkau beri nikmat, bukan yang dimurkai dan bukan yang sesat", "audio_idx": 6, "keywords": ["sirat", "ladhina", "anamta", "alayhim", "maghdubi", "dallin"]}];
+var SURAH="fatihah";
+var AYAT_COUNT=7;
+var ci=0,ael=null,pel=null,vs,vt,vs2,recOn=false,mediaRec=null,recordings={};
+
+document.getElementById("btnStart").addEventListener("click",function(){
+  document.getElementById("pg-splash").style.display="none";
+  document.getElementById("pg-main").style.display="block";
+  vs=document.getElementById("vS"); vt=document.getElementById("vT");
+  vs.src="video/smile.mp4"; vt.src="video/thumb.mp4";
+  vs.load(); vt.load();
+  vs.play().catch(function(){setTimeout(function(){vs.play().catch(function(){});  },300);});
+  var tmp=new Audio("audio/praise/p0.mp3"); tmp.volume=0;
+  tmp.play().then(function(){tmp.pause();}).catch(function(){});
+  buildProg(); loadSeg();
+});
+
+function showVid(t){
+  if(!vs||!vt) return;
+  if(t==="thumb"){vs.style.display="none";vt.style.display="block";vt.currentTime=0;vt.play().catch(function(){setTimeout(function(){vt.play().catch(function(){});  },200);});vt.onended=function(){showVid("smile");};}
+  else{vt.style.display="none";vt.pause();vs.style.display="block";vs.play().catch(function(){setTimeout(function(){vs.play().catch(function(){});  },200);});}
+}
+
+function playPraise(i){
+  if(pel) pel.pause();
+  pel=new Audio("audio/praise/p"+i+".mp3");
+  pel.play().catch(function(){});
+}
+
+function setStep(n){
+  var b=document.getElementById("stepBox");
+  if(n===1){b.className="step-box s1";b.innerHTML="&#128266; Langkah 1: Dengarkan Miss Diah";}
+  else if(n===2){b.className="step-box s2";b.innerHTML="&#127908; Langkah 2: Rekam suaramu!";}
+  else{b.className="step-box s3";b.innerHTML="&#9989; Langkah 3: Tap Sudah untuk lanjut!";}
+}
+
+function guruPlay(){
+  if(ael&&!ael.paused){ael.pause();resetPlay();return;}
+  var seg=S[ci];
+  ael=new Audio("audio/"+SURAH+"/ayat"+seg.audio_idx+".mp3");
+  ael.playbackRate=0.88;
+  document.getElementById("btnPlay").className="B Bg playing";
+  document.getElementById("pIco").textContent="[ ]";
+  document.getElementById("pLbl").textContent="Miss Diah sedang membaca...";
+  setStep(1);
+  document.getElementById("bubble").className="bubble";
+  document.getElementById("bubble").textContent="Dengarkan baik-baik ya...";
+  ael.onended=ael.onerror=function(){
+    resetPlay();
+    if(seg.type==="ayat"){
+      document.getElementById("btnMic").style.display="flex";
+      setStep(2);
+      document.getElementById("bubble").textContent="Sekarang giliranmu! Tap tombol merah dan baca!";
+    }else{
+      document.getElementById("btnNext").className="B Bn sh";
+      document.getElementById("nLbl").textContent="Lanjut ke Ayat 1 ->";
+      document.getElementById("bubble").className="bubble happy";
+      document.getElementById("bubble").textContent="Sudah dengar Bismillahnya? Ayo lanjut!";
+    }
+  };
+  ael.play().catch(function(){resetPlay();document.getElementById("bubble").textContent="Tap tombol sekali lagi ya!";});
+}
+
+function resetPlay(){
+  document.getElementById("btnPlay").className="B Bg";
+  document.getElementById("pIco").innerHTML="&#128266;";
+  document.getElementById("pLbl").textContent="Putar Lagi";
+}
+
+function toggleMic(){if(recOn) stopRec(); else startRec();}
+
+function startRec(){
+  navigator.mediaDevices.getUserMedia({audio:true})
+  .then(function(stream){
+    var chunks=[];
+    var mimeType="audio/webm";
+    if(typeof MediaRecorder!=="undefined"){
+      if(MediaRecorder.isTypeSupported("audio/mp4")){mimeType="audio/mp4";}
+      else if(MediaRecorder.isTypeSupported("audio/aac")){mimeType="audio/aac";}
+      else if(!MediaRecorder.isTypeSupported("audio/webm")){mimeType="";}
+    }
+    try{mediaRec=mimeType?new MediaRecorder(stream,{mimeType:mimeType}):new MediaRecorder(stream);}
+    catch(e){mediaRec=new MediaRecorder(stream); mimeType=mediaRec.mimeType||"audio/webm";}
+    mediaRec.ondataavailable=function(e){if(e.data.size>0) chunks.push(e.data);};
+    mediaRec.onstop=function(){
+      var blob=new Blob(chunks,{type:mimeType||"audio/webm"});
+      recordings[ci]=URL.createObjectURL(blob);
+      stream.getTracks().forEach(function(t){t.stop();});
+      recOn=false;
+      document.getElementById("btnMic").classList.remove("rec");
+      document.getElementById("mIco").innerHTML="&#127908;";
+      document.getElementById("mLbl").textContent="Rekam Lagi";
+      document.getElementById("btnSudah").style.display="flex";
+      setStep(3);
+    };
+    mediaRec.start(); recOn=true;
+    document.getElementById("btnMic").classList.add("rec");
+    document.getElementById("mIco").textContent="[ ]";
+    document.getElementById("mLbl").textContent="Merekam... Tap untuk berhenti";
+    document.getElementById("bubble").textContent="Aku mendengarkan... bacalah!";
+  })
+  .catch(function(){
+    document.getElementById("btnSudah").style.display="flex";
+    setStep(3);
+  });
+}
+function stopRec(){if(mediaRec&&recOn) mediaRec.stop();}
+
+function sudahBaca(){
+  document.getElementById("btnSudah").style.display="none";
+  document.getElementById("btnMic").style.display="none";
+  document.getElementById("btnNext").className="B Bn sh";
+  document.getElementById("nLbl").textContent=(ci===S.length-1)?"Dengarkan Rekamanmu ->":"Lanjut Ayat ->";
+  playPraise(Math.floor(Math.random()*5));
+  showVid("thumb"); confetti();
+  document.getElementById("bubble").className="bubble happy";
+  document.getElementById("bubble").textContent="Masya Allah! Bagus sekali!";
+}
+
+function nextSeg(){
+  if(ael){ael.pause();ael=null;}
+  document.getElementById("btnNext").className="B Bn";
+  document.getElementById("btnSudah").style.display="none";
+  document.getElementById("btnMic").style.display="none";
+  resetPlay(); setStep(1);
+  if(ci>=S.length-1){goPbk();return;}
+  ci++; loadSeg();
+}
+
+function loadSeg(){
+  var seg=S[ci]; showVid("smile");
+  document.getElementById("anum").textContent=seg.num||"B";
+  document.getElementById("albl").textContent=seg.type==="intro"?"Pembuka - Dengarkan saja":"Ayat "+seg.num+" dari "+AYAT_COUNT;
+  document.getElementById("aar").textContent=seg.arabic;
+  document.getElementById("alt").textContent=seg.latin;
+  document.getElementById("atr").textContent=seg.arti;
+  document.getElementById("pLbl").textContent=seg.type==="intro"?"Dengarkan Bismillah":"Dengarkan Miss Diah";
+  document.getElementById("bubble").className="bubble";
+  document.getElementById("bubble").textContent="Bismillah, yuk mulai!";
+  buildProg(); setTimeout(guruPlay,800);
+}
+
+function buildProg(){
+  var r=document.getElementById("prow"); r.innerHTML="";
+  var d0=document.createElement("div");
+  d0.className="pd"+(ci===0?" cur":ci>0?" done":"");
+  d0.textContent="B"; r.appendChild(d0);
+  S.filter(function(s){return s.type==="ayat";}).forEach(function(_,i){
+    var d=document.createElement("div");
+    d.className="pd"+(ci===i+1?" cur":ci>i+1?" done":"");
+    d.textContent=i+1; r.appendChild(d);
+  });
+}
+
+function goPbk(){
+  document.getElementById("pg-main").style.display="none";
+  document.getElementById("pg-pbk").style.display="block";
+  playPraise(5);
+  var list=document.getElementById("pbList"); list.innerHTML="";
+  S.filter(function(s){return s.type==="ayat";}).forEach(function(seg,i){
+    var idx=i+1,hasRec=recordings[idx]!=null;
+    var div=document.createElement("div");
+    div.className="pb-item"; div.id="pbi-"+idx;
+    div.innerHTML="<div class='pb-num'>"+seg.num+"</div>"+
+      "<div class='pb-info'><div class='pb-title'>"+seg.latin+"</div>"+
+      "<div class='pb-sub'>"+(hasRec?"Tap untuk dengarkan":"Tidak ada rekaman")+"</div></div>"+
+      "<span class='pb-icon'>"+(hasRec?"&#128266;":"&#10060;")+"</span>"+
+      "<span class='pb-wave'><span class='rw'></span><span class='rw'></span><span class='rw'></span><span class='rw'></span></span>";
+    if(hasRec){
+      (function(i2,url){div.onclick=function(){
+        var prev=document.querySelector(".pb-item.playing");
+        if(prev) prev.classList.remove("playing");
+        div.classList.add("playing");
+        var a=new Audio(url);
+        a.play().catch(function(){div.classList.remove("playing");});
+        a.onended=function(){div.classList.remove("playing");};
+      };})( idx, recordings[idx]);
+    }
+    list.appendChild(div);
+  });
+}
+
+function goUjian(){
+  if(pel) pel.pause(); playPraise(6);
+  document.getElementById("pg-pbk").style.display="none";
+  document.getElementById("pg-ujian").style.display="block";
+  vs2=document.getElementById("vS2");
+  vs2.src="video/smile.mp4"; vs2.load(); vs2.play().catch(function(){});
+}
+
+function selesaiUjian(){
+  document.getElementById("pg-ujian").style.display="none";
+  document.getElementById("pg-win").style.display="block";
+  playPraise(7); launchFW(); bigConfetti();
+}
+
+function confetti(){
+  var w=document.getElementById("cfw");w.innerHTML="";w.style.display="block";
+  var col=["#52b788","#e9c46a","#f4a261","#2d6a4f","#a8d5c2","#f9b4a0"];
+  for(var i=0;i<28;i++){var p=document.createElement("div");p.className="cfp";p.style.cssText="left:"+Math.random()*100+"%;top:-10px;background:"+col[~~(Math.random()*col.length)]+";animation-delay:"+Math.random()*.8+"s;animation-duration:"+(1.5+Math.random())+"s";w.appendChild(p);}
+  setTimeout(function(){w.style.display="none";},3000);
+}
+function bigConfetti(){
+  var w=document.getElementById("cfw");w.innerHTML="";w.style.display="block";
+  var col=["#e9c46a","#52b788","#f4a261","#ffffff","#a8d5c2"];
+  for(var i=0;i<60;i++){var p=document.createElement("div");p.className="cfp";p.style.cssText="left:"+Math.random()*100+"%;top:-10px;width:"+(6+Math.random()*8)+"px;height:"+(6+Math.random()*8)+"px;background:"+col[~~(Math.random()*col.length)]+";animation-delay:"+Math.random()*1.2+"s;animation-duration:"+(2+Math.random())+"s";w.appendChild(p);}
+  setTimeout(function(){w.style.display="none";},4000);
+}
+var fwAnim=null;
+function launchFW(){
+  var c=document.getElementById("fwCanvas"); c.style.display="block";
+  var ctx=c.getContext("2d"); c.width=window.innerWidth; c.height=window.innerHeight;
+  var parts=[],cols=["#e9c46a","#52b788","#f4a261","#a8d5c2","#ffffff","#f9b4a0"];
+  function Pt(x,y,col){this.x=x;this.y=y;this.color=col;this.vx=(Math.random()-.5)*8;this.vy=(Math.random()-.5)*8-4;this.alpha=1;this.r=Math.random()*3+2;}
+  var li=setInterval(function(){var x=Math.random()*c.width,y=Math.random()*c.height*.5;for(var i=0;i<60;i++) parts.push(new Pt(x,y,cols[~~(Math.random()*cols.length)]));  },600);
+  function draw(){ctx.clearRect(0,0,c.width,c.height);parts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.15;p.alpha-=.015;ctx.globalAlpha=Math.max(0,p.alpha);ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();});ctx.globalAlpha=1;parts=parts.filter(function(p){return p.alpha>0;});fwAnim=requestAnimationFrame(draw);}
+  draw(); setTimeout(function(){clearInterval(li);},4000);
+}
+</script>
+</body>
+</html>

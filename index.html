@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guru Mengaji AI - Miss Diah</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Nunito",sans-serif;min-height:100vh;background:linear-gradient(160deg,#1b4332,#2d6a4f);padding:20px}
+.wrap{max-width:420px;margin:0 auto;text-align:center;padding-top:24px}
+.vwrap{width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 14px;border:3px solid #e9c46a;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.vwrap video{width:100%;height:100%;object-fit:cover}
+h1{color:white;font-size:22px;font-weight:800;margin-bottom:4px}
+.teacher{color:#e9c46a;font-size:14px;font-weight:700;margin-bottom:4px}
+.sub{color:#a8d5c2;font-size:11px;margin-bottom:24px}
+.list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.card{background:white;border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;text-decoration:none;transition:transform .15s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.card:active{transform:scale(.97)}
+.card.locked{opacity:.5;cursor:default;background:#ccc}
+.num{width:42px;height:42px;border-radius:50%;background:#2d6a4f;color:white;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;text-align:center;line-height:1.2}
+.info{text-align:left;flex:1}
+.arabic{font-family:"Amiri",serif;font-size:17px;color:#2d6a4f;margin-bottom:2px}
+.latin{font-size:12px;font-weight:800;color:#1b4332}
+.ayat{font-size:10px;color:#84a98c;font-weight:600}
+.avail{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:800;background:#d8f3dc;color:#1b4332}
+.locked-badge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:800;background:#e0e0e0;color:#aaa}
+.arrow{font-size:16px;color:#2d6a4f}
+.footer{color:#a8d5c2;font-size:10px;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="vwrap"><video id="vMenu" loop muted playsinline webkit-playsinline autoplay preload="auto"></video></div>
+  <h1>Guru Mengaji AI</h1>
+  <div class="teacher">&#x1F393; Miss Diah</div>
+  <div class="sub">Pilih surat yang ingin dipelajari</div>
+  <div class="list">
+    <a href="ikhlas.html" class="card">
+      <div class="num">&#9786;<br>112</div>
+      <div class="info">
+        <div class="arabic">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x625;&#x62e;&#x644;&#x627;&#x635;</div>
+        <div class="latin">Al-Ikhlas</div>
+        <div class="ayat">4 ayat</div>
+      </div>
+      <div><span class="avail">Tersedia</span><div class="arrow">&#8594;</div></div>
+    </a>
+    <a href="fatihah.html" class="card">
+      <div class="num">&#9786;<br>1</div>
+      <div class="info">
+        <div class="arabic">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x641;&#x627;&#x62a;&#x62d;&#x629;</div>
+        <div class="latin">Al-Fatihah</div>
+        <div class="ayat">7 ayat</div>
+      </div>
+      <div><span class="avail">Tersedia</span><div class="arrow">&#8594;</div></div>
+    </a>
+    <a href="falaq.html" class="card">
+      <div class="num">&#9786;<br>113</div>
+      <div class="info">
+        <div class="arabic">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x641;&#x64e;&#x644;&#x64e;&#x642;</div>
+        <div class="latin">Al-Falaq</div>
+        <div class="ayat">5 ayat</div>
+      </div>
+      <div><span class="avail">Tersedia</span><div class="arrow">&#8594;</div></div>
+    </a>
+    <a href="nas.html" class="card">
+      <div class="num">&#9786;<br>114</div>
+      <div class="info">
+        <div class="arabic">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x646;&#x651;&#x64e;&#x627;&#x633;</div>
+        <div class="latin">An-Nas</div>
+        <div class="ayat">6 ayat</div>
+      </div>
+      <div><span class="avail">Tersedia</span><div class="arrow">&#8594;</div></div>
+    </a>
+  </div>
+  <div class="footer">&#169; 2025 Guru Mengaji AI - Miss Diah</div>
+</div>
+<script>
+var v=document.getElementById("vMenu");
+v.src="video/smile.mp4"; v.load();
+v.play().catch(function(){setTimeout(function(){v.play().catch(function(){});},500);});
+</script>
+</body>
+</html>
