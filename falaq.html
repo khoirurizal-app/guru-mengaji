@@ -121,11 +121,11 @@ body{font-family:"Nunito",sans-serif;min-height:100vh;background:#FFF9F5}
     <span id="pIco">&#9836;</span><span id="pLbl">Dengarkan Miss Diah</span>
     <span class="waves"><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span></span>
   </button>
-  <button class="B Brec" id="btnMic" onclick="toggleMic()">
+  <button class="B Brec" id="btnMic" onclick="toggleMic()" style="display:none">
     <span id="mIco">&#9679;</span><span id="mLbl">Rekam Suaramu!</span>
   </button>
   <button class="B Bgreen" id="btnSudah" onclick="sudahBaca()" style="display:none">&#10003; Sudah! Lanjut!</button>
-  <button class="B Bsec" id="btnNext" onclick="nextSeg()"><span id="nLbl">Lanjut</span></button>
+  <button class="B Bsec" id="btnNext" onclick="nextSeg()" style="display:none"><span id="nLbl">Lanjut</span></button>
 </div></div>
 
 <div id="pg-pbk"><div class="W">
@@ -221,11 +221,11 @@ function guruPlay(){
   ael.onended=ael.onerror=function(){
     resetPlay();
     if(seg.type==="ayat"){
-      document.getElementById("btnMic").className="B Brec sh";
+      document.getElementById("btnMic").style.display="flex";
       setStep(1);
       document.getElementById("bubble").textContent="Sekarang giliranmu! Tap tombol merah dan baca!";
     }else{
-      document.getElementById("btnNext").className="B Bsec sh";
+      document.getElementById("btnNext").style.display="flex";
       document.getElementById("nLbl").textContent="Lanjut ke Ayat 1";
       document.getElementById("bubble").textContent="Sudah dengar Bismillahnya? Ayo lanjut!";
     }
@@ -254,27 +254,27 @@ function startRec(){
       recordings[ci]=URL.createObjectURL(new Blob(chunks,{type:mimeType||"audio/webm"}));
       stream.getTracks().forEach(function(t){t.stop();});
       recOn=false;
-      document.getElementById("btnMic").className="B Brec sh";
+      document.getElementById("btnMic").style.display="flex";
       document.getElementById("mIco").textContent="\u25cf";
       document.getElementById("mLbl").textContent="Rekam Lagi";
-      document.getElementById("btnSudah").className="B Bgreen sh";
+      document.getElementById("btnSudah").style.display="flex";
       setStep(2);
     };
     mediaRec.start(); recOn=true;
-    document.getElementById("btnMic").className="B Brec sh rec";
+    document.getElementById("btnMic").style.display="flex";document.getElementById("btnMic").className="B Brec rec";
     document.getElementById("mIco").textContent="||";
     document.getElementById("mLbl").textContent="Merekam... Tap untuk berhenti";
     document.getElementById("bubble").textContent="Aku mendengarkan... bacalah!";
   }).catch(function(){
-    document.getElementById("btnSudah").className="B Bgreen sh";
+    document.getElementById("btnSudah").style.display="flex";
     setStep(2);
   });
 }
 function stopRec(){if(mediaRec&&recOn) mediaRec.stop();}
 function sudahBaca(){
-  document.getElementById("btnSudah").className="B Bgreen sh";
-  document.getElementById("btnMic").className="B Brec";
-  document.getElementById("btnNext").className="B Bsec sh";
+  document.getElementById("btnSudah").style.display="flex";
+  document.getElementById("btnMic").style.display="none";
+  document.getElementById("btnNext").style.display="flex";
   document.getElementById("nLbl").textContent=(ci===S.length-1)?"Dengarkan Rekamanmu":"Lanjut Ayat";
   playPraise(Math.floor(Math.random()*5));
   showVid("thumb"); confetti();
@@ -282,9 +282,9 @@ function sudahBaca(){
 }
 function nextSeg(){
   if(ael){ael.pause();ael=null;}
-  document.getElementById("btnNext").className="B Bsec";
-  document.getElementById("btnSudah").className="B Bgreen sh";
-  document.getElementById("btnMic").className="B Brec";
+  document.getElementById("btnNext").style.display="none";
+  document.getElementById("btnSudah").style.display="none";
+  document.getElementById("btnMic").style.display="none";
   resetPlay(); setStep(0);
   if(ci>=S.length-1){goPbk();return;}
   ci++; loadSeg();
