@@ -4,145 +4,160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Miss Diah - Surah Al-Ikhlas</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Nunito",sans-serif;min-height:100vh;background:#1b4332}
-#pg-splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#1b4332,#2d6a4f);padding:30px;text-align:center}
-.s-ar{font-family:"Amiri",serif;font-size:36px;color:#e9c46a;margin-bottom:10px}
-.s-h1{color:white;font-size:24px;font-weight:800;margin-bottom:4px}
-.s-sub{color:#e9c46a;font-size:14px;font-weight:700;margin-bottom:4px}
-.s-p{color:#a8d5c2;font-size:13px;margin-bottom:34px}
-#btnStart{background:#e9c46a;color:#3d2800;border:none;border-radius:50px;padding:20px 48px;font-family:"Nunito",sans-serif;font-size:19px;font-weight:800;cursor:pointer;animation:kb 1.6s ease-in-out infinite}
-@keyframes kb{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
-.home-link{display:inline-block;margin-top:16px;color:#a8d5c2;font-size:12px;cursor:pointer;text-decoration:underline}
-#pg-main{display:none;min-height:100vh;background:linear-gradient(150deg,#e8f4f0,#f0e8f4,#e8eef4);padding:14px}
-#pg-pbk{display:none;min-height:100vh;background:linear-gradient(150deg,#1b4332,#2d6a4f);padding:14px}
-#pg-ujian{display:none;min-height:100vh;background:linear-gradient(150deg,#e8f4f0,#f0e8f4);padding:14px}
-#pg-win{display:none;min-height:100vh;background:linear-gradient(160deg,#1b4332,#2d6a4f);padding:20px;text-align:center}
+body{font-family:"Nunito",sans-serif;min-height:100vh;background:#FFF9F5}
+#pg-splash{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;background:#FFF9F5}
+.splash-circle{width:140px;height:140px;border-radius:50%;background:#86E3CE;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.splash-circle video{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.splash-ar{font-family:"Amiri",serif;font-size:32px;color:#2A9D8F;margin-bottom:6px}
+.splash-title{font-size:22px;font-weight:900;color:#333;margin-bottom:3px}
+.splash-sub{font-size:13px;color:#888;margin-bottom:8px;font-weight:700}
+.splash-name{font-size:12px;color:#aaa;margin-bottom:30px}
+.btn-start{background:#86E3CE;color:#2A9D8F;border:none;border-radius:50px;padding:18px 52px;font-family:"Nunito",sans-serif;font-size:18px;font-weight:900;cursor:pointer;animation:kb 1.6s ease-in-out infinite;box-shadow:0 4px 20px #86E3CE88}
+@keyframes kb{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.back-link{margin-top:16px;color:#bbb;font-size:12px;cursor:pointer;font-weight:700}
+#pg-main{display:none;min-height:100vh;background:#FFF9F5;padding:16px}
+#pg-pbk{display:none;min-height:100vh;background:#FFF9F5;padding:16px}
+#pg-ujian{display:none;min-height:100vh;background:#FFF9F5;padding:16px}
+#pg-win{display:none;min-height:100vh;padding:30px;text-align:center;background:#FFF9F5}
 .W{max-width:480px;margin:0 auto}
-.hdr{text-align:center;margin-bottom:10px}
-.hdr h1{font-size:16px;font-weight:800;color:#2d6a4f}
-.hdr p{font-size:10px;color:#52796f;font-weight:600}
-.badge{display:inline-block;background:#d8f3dc;color:#1b4332;border-radius:20px;padding:3px 12px;font-size:10px;font-weight:800;margin-top:3px;border:1px solid #52b788}
-.prow{display:flex;gap:4px;justify-content:center;margin-bottom:10px;flex-wrap:wrap}
-.pd{width:26px;height:26px;border-radius:50%;border:2px solid #a8d5c2;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#84a98c;background:white;transition:all .25s}
-.pd.cur{background:#2d6a4f;border-color:#2d6a4f;color:white;transform:scale(1.15)}
-.pd.done{background:#52b788;border-color:#52b788;color:white}
-.guru-row{display:flex;gap:10px;align-items:flex-end;margin-bottom:10px}
-.vwrap{width:120px;height:120px;flex-shrink:0;border-radius:16px;overflow:hidden;background:#1b4332;position:relative}
-.vwrap video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.bubble{background:white;border-radius:13px;padding:9px 12px;font-size:11.5px;font-weight:700;color:#2d6a4f;border:1.5px solid #a8d5c2;line-height:1.6;min-height:56px;flex:1}
-.bubble.happy{border-color:#52b788;background:#f0fff4;color:#1b4332}
-.card{background:white;border-radius:15px;padding:13px;border:1.5px solid #a8d5c2;margin-bottom:9px}
-.step-box{border-radius:10px;padding:8px 12px;margin-bottom:8px;font-size:11px;font-weight:700;text-align:center}
-.s1{background:#e8f4f0;color:#2d6a4f;border:1px solid #a8d5c2}
-.s2{background:#fff8e8;color:#7c4a00;border:1px solid #e9c46a}
-.s3{background:#e8eef4;color:#2d496a;border:1px solid #a8b5c2}
-.arow{display:flex;align-items:center;margin-bottom:6px}
-.anum{background:#a8d5c2;color:#1b4332;border-radius:50%;width:21px;height:21px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;margin-right:6px;flex-shrink:0}
-.a-ar{font-family:"Amiri",serif;font-size:24px;text-align:right;direction:rtl;color:#2d6a4f;line-height:1.9;margin-bottom:4px}
-.a-lt{font-size:11px;color:#52796f;font-style:italic;margin-bottom:2px}
-.a-tr{font-size:10px;color:#84a98c;font-weight:600}
-.B{width:100%;padding:15px;border:none;border-radius:13px;font-family:"Nunito",sans-serif;font-size:15px;font-weight:800;cursor:pointer;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:9px;min-height:54px;transition:all .15s}
+.top-bar{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.top-avatar{width:44px;height:44px;border-radius:50%;background:#86E3CE;overflow:hidden;flex-shrink:0;position:relative}
+.top-avatar video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;mix-blend-mode:multiply}
+.top-info{flex:1}
+.top-title{font-size:13px;font-weight:900;color:#333}
+.top-sub{font-size:10px;color:#aaa;font-weight:700}
+.prow{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap}
+.pd{width:28px;height:28px;border-radius:50%;background:#EEE;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#aaa;transition:all .25s}
+.pd.cur{background:#86E3CE;color:#2A9D8F;transform:scale(1.15);box-shadow:0 2px 8px #86E3CE88}
+.pd.done{background:#2A9D8F;color:white}
+.bubble-wrap{background:white;border-radius:20px;padding:12px 16px;margin-bottom:12px;border:2px solid #86E3CE;position:relative}
+.bubble-wrap::before{content:"";position:absolute;left:20px;top:-8px;width:14px;height:14px;background:white;border-left:2px solid #86E3CE;border-top:2px solid #86E3CE;transform:rotate(45deg)}
+.bubble-txt{font-size:12px;font-weight:700;color:#555;line-height:1.6}
+.card{background:white;border-radius:20px;padding:16px;border:2px solid #E8FAF6;margin-bottom:12px;position:relative}
+.card-badge{position:absolute;top:-1px;left:16px;background:#86E3CE;color:#2A9D8F;border-radius:0 0 10px 10px;padding:2px 10px;font-size:10px;font-weight:800}
+.a-ar{font-family:"Amiri",serif;font-size:26px;text-align:right;direction:rtl;color:#333;line-height:2;margin-bottom:6px;margin-top:8px}
+.a-lt{font-size:11px;color:#888;font-style:italic;margin-bottom:3px;font-weight:700}
+.a-tr{font-size:10px;color:#bbb;font-weight:700}
+.step-bar{display:flex;gap:6px;margin-bottom:10px}
+.step-dot{flex:1;height:5px;border-radius:10px;background:#EEE;transition:background .3s}
+.step-dot.active{background:#86E3CE}
+.step-dot.done{background:#2A9D8F}
+.step-lbl{font-size:10px;font-weight:800;color:#aaa;margin-bottom:8px;text-align:center}
+.B{width:100%;padding:15px;border:none;border-radius:16px;font-family:"Nunito",sans-serif;font-size:15px;font-weight:800;cursor:pointer;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;transition:all .15s}
 .B:active{transform:scale(.97)}
-.Bg{background:#2d6a4f;color:white}
-.Bg.playing{background:#c1121f}
-.Bred{background:#d62828;color:white}
-.Bred.rec{animation:pm .9s ease-in-out infinite}
-@keyframes pm{0%,100%{box-shadow:0 4px 14px rgba(214,40,40,.4)}50%{box-shadow:0 4px 26px rgba(214,40,40,.7),0 0 0 8px rgba(214,40,40,.12)}}
-.Bgreen{background:#52b788;color:white}
-.Bn{background:#2d6a4f;color:white;display:none}
-.Bn.sh{display:flex}
+.Bmain{background:#86E3CE;color:#2A9D8F}
+.Bmain.playing{background:#FA897B;color:white}
+.Brec{background:#FA897B;color:white;display:none}
+.Brec.rec{animation:pulse .9s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 4px 12px #FA897B66}50%{box-shadow:0 4px 24px #FA897BAA,0 0 0 8px #FA897B22}}
+.Bgreen{background:#86E3CE;color:#2A9D8F;display:none}
+.Bsec{background:white;color:#888;border:2px solid #EEE;display:none}
+.Bsec.sh,.Bgreen.sh,.Brec.sh{display:flex;animation:pop .3s ease}
+@keyframes pop{0%{transform:scale(.92)}100%{transform:scale(1)}}
 .waves{display:none;gap:3px;align-items:center}
-.Bg.playing .waves{display:flex}
-.wb{width:3px;border-radius:2px;background:white;animation:sw .5s ease-in-out infinite}
+.Bmain.playing .waves{display:flex}
+.wb{width:3px;border-radius:2px;background:#2A9D8F;animation:sw .5s ease-in-out infinite}
 .wb:nth-child(1){height:6px}.wb:nth-child(2){height:14px;animation-delay:.1s}.wb:nth-child(3){height:8px;animation-delay:.2s}.wb:nth-child(4){height:16px;animation-delay:.05s}.wb:nth-child(5){height:6px;animation-delay:.15s}
 @keyframes sw{0%,100%{transform:scaleY(1)}50%{transform:scaleY(2)}}
-.pb-hdr{color:white;text-align:center;margin-bottom:14px}
-.pb-hdr h2{font-size:18px;font-weight:800;margin-bottom:4px}
-.pb-hdr p{font-size:12px;color:#a8d5c2}
-.pb-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.pb-item{background:rgba(255,255,255,.12);border-radius:12px;padding:11px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;border:1px solid rgba(255,255,255,.15);transition:background .2s}
-.pb-item.playing{background:rgba(233,196,106,.25);border-color:#e9c46a}
-.pb-num{width:32px;height:32px;border-radius:50%;background:#e9c46a;color:#3d2800;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.pb-item{background:white;border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;margin-bottom:8px;border:2px solid #F0F0F0;cursor:pointer;transition:border-color .2s}
+.pb-item.playing{border-color:#86E3CE}
+.pb-num{width:34px;height:34px;border-radius:50%;background:#86E3CE;color:#2A9D8F;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
 .pb-info{flex:1}
-.pb-title{color:white;font-size:12px;font-weight:700}
-.pb-sub{color:#a8d5c2;font-size:10px;margin-top:2px}
+.pb-title{font-size:12px;font-weight:800;color:#333}
+.pb-sub{font-size:10px;color:#aaa;font-weight:700;margin-top:2px}
 .pb-icon{font-size:18px}
 .pb-wave{display:none;gap:2px;align-items:center}
 .pb-item.playing .pb-wave{display:flex}
 .pb-item.playing .pb-icon{display:none}
-.rw{width:3px;height:14px;border-radius:2px;background:#e9c46a;animation:sw .5s ease-in-out infinite}
+.rw{width:3px;height:14px;border-radius:2px;background:#86E3CE;animation:sw .5s ease-in-out infinite}
 .rw:nth-child(2){animation-delay:.1s;height:20px}.rw:nth-child(3){animation-delay:.2s;height:10px}.rw:nth-child(4){animation-delay:.05s;height:18px}
-.ulang-card{background:white;border-radius:15px;padding:15px;border:1.5px solid #a8d5c2;margin-bottom:10px;text-align:center}
-.full-ar{font-family:"Amiri",serif;font-size:20px;text-align:right;direction:rtl;color:#2d6a4f;line-height:2.1}
-#pg-win h1{color:#e9c46a;font-size:24px;font-weight:800;margin-bottom:8px;margin-top:16px}
-#pg-win p{color:#a8d5c2;font-size:13px;margin-bottom:20px;line-height:1.7}
+.ujian-card{background:white;border-radius:20px;padding:16px;border:2px solid #E8FAF6;margin-bottom:12px;text-align:center}
+.full-ar{font-family:"Amiri",serif;font-size:20px;text-align:right;direction:rtl;color:#333;line-height:2.2}
+.win-circle{width:120px;height:120px;border-radius:50%;background:#86E3CE;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:48px}
+#pg-win h1{font-size:24px;font-weight:900;color:#333;margin-bottom:8px}
+#pg-win p{color:#888;font-size:13px;margin-bottom:24px;line-height:1.8;font-weight:700}
 .cfw{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;display:none}
-.cfp{position:absolute;width:9px;height:9px;border-radius:2px;animation:cfall 2.5s ease-in forwards}
+.cfp{position:absolute;width:9px;height:9px;border-radius:50%;animation:cfall 2.5s ease-in forwards}
 @keyframes cfall{0%{opacity:1;transform:translateY(-10px) rotate(0)}100%{opacity:0;transform:translateY(105vh) rotate(720deg)}}
 #fwCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997;display:none}
+.page-hdr{font-size:16px;font-weight:900;color:#333;margin-bottom:4px}
+.page-sub{font-size:11px;color:#aaa;font-weight:700;margin-bottom:14px}
 </style>
 </head>
 <body>
+
 <div id="pg-splash">
-  <div class="s-ar">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x625;&#x62e;&#x644;&#x627;&#x635;</div>
-  <div class="s-h1">Guru Mengaji AI</div>
-  <div class="s-sub">Miss Diah</div>
-  <div class="s-p">Surah Al-Ikhlas</div>
-  <button id="btnStart">MULAI BELAJAR</button>
-  <div class="home-link" onclick="location.href='index.html'">&#8592; Kembali ke Menu</div>
+  <div class="splash-circle"><video id="vSplash" loop muted playsinline webkit-playsinline preload="auto"></video></div>
+  <div class="splash-ar">&#x633;&#x648;&#x631;&#x629; &#x627;&#x644;&#x625;&#x62e;&#x644;&#x627;&#x635;</div>
+  <div class="splash-title">Miss Diah</div>
+  <div class="splash-sub">Surah Al-Ikhlas</div>
+  <div class="splash-name">Guru Mengaji AI</div>
+  <button class="btn-start" id="btnStart">Mulai Belajar!</button>
+  <div class="back-link" onclick="location.href='index.html'">Kembali ke Menu</div>
 </div>
+
 <div id="pg-main"><div class="W">
-  <div class="hdr"><h1>Guru Mengaji AI - Miss Diah</h1><p>Surah Al-Ikhlas</p><div class="badge">Surah Al-Ikhlas</div></div>
-  <div class="prow" id="prow"></div>
-  <div class="guru-row">
-    <div class="vwrap"><video id="vS" loop muted playsinline webkit-playsinline preload="auto"></video><video id="vT" muted playsinline webkit-playsinline preload="auto" style="display:none"></video></div>
-    <div class="bubble" id="bubble">Yuk hafal Surah Al-Ikhlas bersama Miss Diah!</div>
+  <div class="top-bar">
+    <div class="top-avatar"><video id="vS" loop muted playsinline webkit-playsinline preload="auto"></video></div>
+    <div class="top-info">
+      <div class="top-title">Miss Diah</div>
+      <div class="top-sub">Surah Al-Ikhlas</div>
+    </div>
+    <div class="prow" id="prow"></div>
   </div>
-  <div class="step-box s1" id="stepBox">&#128266; Langkah 1: Dengarkan Miss Diah</div>
+  <div class="bubble-wrap"><div class="bubble-txt" id="bubble">Yuk hafal Surah Al-Ikhlas bersama Miss Diah!</div></div>
+  <div class="step-bar" id="stepBar">
+    <div class="step-dot active" id="sd1"></div>
+    <div class="step-dot" id="sd2"></div>
+    <div class="step-dot" id="sd3"></div>
+  </div>
+  <div class="step-lbl" id="stepLbl">Dengarkan Miss Diah</div>
   <div class="card">
-    <div class="arow"><div class="anum" id="anum">B</div><span style="font-size:10px;color:#84a98c;font-weight:600" id="albl">Pembuka</span></div>
+    <div class="card-badge" id="cardBadge">Ayat 1</div>
     <div class="a-ar" id="aar"></div>
     <div class="a-lt" id="alt"></div>
     <div class="a-tr" id="atr"></div>
   </div>
-  <button class="B Bg" id="btnPlay" onclick="guruPlay()">
-    <span id="pIco">&#128266;</span><span id="pLbl">Dengarkan Miss Diah</span>
+  <button class="B Bmain" id="btnPlay" onclick="guruPlay()">
+    <span id="pIco">&#9836;</span><span id="pLbl">Dengarkan Miss Diah</span>
     <span class="waves"><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span></span>
   </button>
-  <button class="B Bred" id="btnMic" onclick="toggleMic()" style="display:none">
-    <span id="mIco">&#127908;</span><span id="mLbl">Rekam Suaramu!</span>
+  <button class="B Brec" id="btnMic" onclick="toggleMic()">
+    <span id="mIco">&#9679;</span><span id="mLbl">Rekam Suaramu!</span>
   </button>
-  <button class="B Bgreen" id="btnSudah" onclick="sudahBaca()" style="display:none">&#9989; Sudah! Lanjut!</button>
-  <button class="B Bn" id="btnNext" onclick="nextSeg()"><span id="nLbl">Lanjut</span></button>
+  <button class="B Bgreen" id="btnSudah" onclick="sudahBaca()">&#10003; Sudah! Lanjut!</button>
+  <button class="B Bsec" id="btnNext" onclick="nextSeg()"><span id="nLbl">Lanjut</span></button>
 </div></div>
+
 <div id="pg-pbk"><div class="W">
-  <div class="pb-hdr"><div style="font-size:50px;margin-bottom:8px">&#127908;</div><h2>Dengarkan Suaramu!</h2><p>Yuk dengarkan rekaman tadi!</p></div>
-  <div class="pb-list" id="pbList"></div>
-  <button class="B" style="background:#e9c46a;color:#3d2800" onclick="goUjian()">Lanjut ke Ujian Hafalan &#8594;</button>
+  <div class="page-hdr">Dengarkan Suaramu!</div>
+  <div class="page-sub">Tap setiap ayat untuk dengarkan rekamanmu</div>
+  <div id="pbList"></div>
+  <button class="B Bmain" onclick="goUjian()">Lanjut ke Ujian &#8594;</button>
 </div></div>
+
 <div id="pg-ujian"><div class="W">
-  <div class="hdr" style="margin-bottom:12px"><h1>Ujian Hafalan!</h1><p>Baca sendiri dari awal sampai akhir!</p></div>
-  <div class="guru-row">
-    <div class="vwrap"><video id="vS2" loop muted playsinline webkit-playsinline preload="auto"></video></div>
-    <div class="bubble">Bismillah! Baca sendiri dari awal ya!</div>
-  </div>
-  <div class="ulang-card">
-    <div style="font-size:12px;font-weight:800;color:#1b4332;margin-bottom:8px">Surah Al-Ikhlas</div>
+  <div class="page-hdr">Ujian Hafalan!</div>
+  <div class="page-sub">Baca sendiri dari awal sampai akhir ya!</div>
+  <div class="bubble-wrap" style="margin-bottom:12px"><div class="bubble-txt">Bismillah! Aku dengarkan kamu ya!</div></div>
+  <div class="ujian-card">
+    <div style="font-size:12px;font-weight:800;color:#aaa;margin-bottom:8px">Surah Al-Ikhlas</div>
     <div class="full-ar">&#x628;&#x650;&#x633;&#x652;&#x645;&#x650; &#x627;&#x644;&#x644;&#x651;&#x647;&#x650; &#x627;&#x644;&#x631;&#x651;&#x64e;&#x62d;&#x652;&#x645;&#x670;&#x646;&#x650; &#x627;&#x644;&#x631;&#x651;&#x64e;&#x62d;&#x650;&#x64a;&#x645;&#x650;<br>&#x642;&#x64f;&#x644;&#x652; &#x647;&#x64f;&#x648;&#x64e; &#x627;&#x644;&#x644;&#x651;&#x647;&#x64f; &#x623;&#x64e;&#x62d;&#x64e;&#x62f;&#x64c; (1)<br>&#x627;&#x644;&#x644;&#x651;&#x647;&#x64f; &#x627;&#x644;&#x635;&#x651;&#x64e;&#x645;&#x64e;&#x62f;&#x64f; (2)<br>&#x644;&#x64e;&#x645;&#x652; &#x64a;&#x64e;&#x644;&#x650;&#x62f;&#x652; &#x648;&#x64e;&#x644;&#x64e;&#x645;&#x652; &#x64a;&#x64f;&#x648;&#x644;&#x64e;&#x62f;&#x652; (3)<br>&#x648;&#x64e;&#x644;&#x64e;&#x645;&#x652; &#x64a;&#x64e;&#x643;&#x64f;&#x646; &#x644;&#x651;&#x64e;&#x647;&#x64f; &#x643;&#x64f;&#x641;&#x64f;&#x648;&#x64b;&#x627; &#x623;&#x64e;&#x62d;&#x64e;&#x62f;&#x64c; (4)</div>
-    <div style="font-size:10px;color:#84a98c;font-weight:600;margin-top:8px">Baca keras-keras!</div>
   </div>
-  <button class="B Bg" onclick="selesaiUjian()">&#9989; Selesai Saya Sudah Baca!</button>
+  <button class="B Bmain" onclick="selesaiUjian()">&#10003; Sudah Saya Baca Semua!</button>
 </div></div>
+
 <div id="pg-win">
-  <div style="font-size:70px">&#127878;</div>
-  <h1>Masya Allah! Selamat!</h1>
-  <p>Adik sudah hafal<br><strong style="color:#e9c46a;font-size:16px">Surah Al-Ikhlas</strong>!<br><br>Alhamdulillah!</p>
-  <button class="B Bg" style="max-width:320px;margin:0 auto" onclick="window.location.href="fatihah.html"">Lanjut &#8594;</button>
-  <br><div class="home-link" onclick="location.href='index.html'">&#8592; Menu</div>
+  <div class="win-circle">&#11088;</div>
+  <h1>Masya Allah!</h1>
+  <p>Adik sudah hafal<br><strong style="color:#2A9D8F">Surah Al-Ikhlas</strong>!<br>Alhamdulillah!</p>
+  <button class="B Bmain" style="max-width:300px;margin:0 auto 10px" onclick="location.href="fatihah.html"">Lanjut &#8594;</button>
+  <div class="back-link" onclick="location.href='index.html'">Kembali ke Menu</div>
 </div>
+
 <canvas id="fwCanvas"></canvas>
 <div class="cfw" id="cfw"></div>
 <script>
@@ -154,19 +169,33 @@ var ci=0,ael=null,pel=null,vs,vt,vs2,recOn=false,mediaRec=null,recordings={};
 document.getElementById("btnStart").addEventListener("click",function(){
   document.getElementById("pg-splash").style.display="none";
   document.getElementById("pg-main").style.display="block";
-  vs=document.getElementById("vS"); vt=document.getElementById("vT");
-  vs.src="video/smile.mp4"; vt.src="video/thumb.mp4";
-  vs.load(); vt.load();
-  vs.play().catch(function(){setTimeout(function(){vs.play().catch(function(){});  },300);});
+  vs=document.getElementById("vS");
+  vs.src="video/smile.mp4"; vs.load();
+  vs.play().catch(function(){setTimeout(function(){vs.play().catch(function(){});},300);});
+  var vsp=document.getElementById("vSplash"); if(vsp) vsp.pause();
   var tmp=new Audio("audio/praise/p0.mp3"); tmp.volume=0;
   tmp.play().then(function(){tmp.pause();}).catch(function(){});
   buildProg(); loadSeg();
 });
 
+window.addEventListener("DOMContentLoaded",function(){
+  var vsp=document.getElementById("vSplash");
+  vsp.src="video/smile.mp4"; vsp.load();
+  vsp.play().catch(function(){setTimeout(function(){vsp.play().catch(function(){});},500);});
+});
+
 function showVid(t){
-  if(!vs||!vt) return;
-  if(t==="thumb"){vs.style.display="none";vt.style.display="block";vt.currentTime=0;vt.play().catch(function(){setTimeout(function(){vt.play().catch(function(){});  },200);});vt.onended=function(){showVid("smile");};}
-  else{vt.style.display="none";vt.pause();vs.style.display="block";vs.play().catch(function(){setTimeout(function(){vs.play().catch(function(){});  },200);});}
+  if(!vs) return;
+  if(t==="thumb"){
+    if(!vt){vt=document.createElement("video");vt.muted=true;vt.setAttribute("playsinline","");vt.setAttribute("webkit-playsinline","");vt.preload="auto";vt.src="video/thumb.mp4";vs.parentNode.appendChild(vt);vt.style.cssText="width:100%;height:100%;object-fit:cover;position:absolute;inset:0";}
+    vs.style.display="none";vt.style.display="block";vt.currentTime=0;
+    vt.play().catch(function(){setTimeout(function(){vt.play().catch(function(){});},200);});
+    vt.onended=function(){showVid("smile");};
+  }else{
+    if(vt){vt.style.display="none";vt.pause();}
+    vs.style.display="block";
+    vs.play().catch(function(){setTimeout(function(){vs.play().catch(function(){});},200);});
+  }
 }
 
 function playPraise(i){
@@ -176,193 +205,175 @@ function playPraise(i){
 }
 
 function setStep(n){
-  var b=document.getElementById("stepBox");
-  if(n===1){b.className="step-box s1";b.innerHTML="&#128266; Langkah 1: Dengarkan Miss Diah";}
-  else if(n===2){b.className="step-box s2";b.innerHTML="&#127908; Langkah 2: Rekam suaramu!";}
-  else{b.className="step-box s3";b.innerHTML="&#9989; Langkah 3: Tap Sudah untuk lanjut!";}
+  var dots=["sd1","sd2","sd3"],lbls=["Dengarkan Miss Diah","Rekam suaramu!","Bagus! Tap Sudah!"];
+  dots.forEach(function(id,i){
+    document.getElementById(id).className="step-dot"+(i<n?" done":i===n?" active":"");
+  });
+  document.getElementById("stepLbl").textContent=lbls[Math.min(n,2)];
 }
 
 function guruPlay(){
   if(ael&&!ael.paused){ael.pause();resetPlay();return;}
   var seg=S[ci];
-  ael=new Audio("audio/"+SURAH+"/ayat"+seg.audio_idx+".mp3");
-  ael.playbackRate=0.88;
-  document.getElementById("btnPlay").className="B Bg playing";
-  document.getElementById("pIco").textContent="[ ]";
-  document.getElementById("pLbl").textContent="Miss Diah sedang membaca...";
-  setStep(1);
-  document.getElementById("bubble").className="bubble";
+  var audioFile=seg.audio_file?("audio/"+SURAH+"/"+seg.audio_file):("audio/"+SURAH+"/ayat"+seg.audio_idx+".mp3");
+  ael=new Audio(audioFile); ael.playbackRate=0.88;
+  document.getElementById("btnPlay").className="B Bmain playing";
+  document.getElementById("pIco").textContent="||";
+  document.getElementById("pLbl").textContent="Miss Diah membaca...";
+  setStep(0);
   document.getElementById("bubble").textContent="Dengarkan baik-baik ya...";
   ael.onended=ael.onerror=function(){
     resetPlay();
     if(seg.type==="ayat"){
-      document.getElementById("btnMic").style.display="flex";
-      setStep(2);
+      document.getElementById("btnMic").className="B Brec sh";
+      setStep(1);
       document.getElementById("bubble").textContent="Sekarang giliranmu! Tap tombol merah dan baca!";
     }else{
-      document.getElementById("btnNext").className="B Bn sh";
-      document.getElementById("nLbl").textContent="Lanjut ke Ayat 1 ->";
-      document.getElementById("bubble").className="bubble happy";
+      document.getElementById("btnNext").className="B Bsec sh";
+      document.getElementById("nLbl").textContent="Lanjut ke Ayat 1";
       document.getElementById("bubble").textContent="Sudah dengar Bismillahnya? Ayo lanjut!";
     }
   };
   ael.play().catch(function(){resetPlay();document.getElementById("bubble").textContent="Tap tombol sekali lagi ya!";});
 }
-
 function resetPlay(){
-  document.getElementById("btnPlay").className="B Bg";
-  document.getElementById("pIco").innerHTML="&#128266;";
+  document.getElementById("btnPlay").className="B Bmain";
+  document.getElementById("pIco").textContent="\u266c";
   document.getElementById("pLbl").textContent="Putar Lagi";
 }
-
 function toggleMic(){if(recOn) stopRec(); else startRec();}
-
 function startRec(){
   navigator.mediaDevices.getUserMedia({audio:true})
   .then(function(stream){
-    var chunks=[];
-    var mimeType="audio/webm";
+    var chunks=[],mimeType="audio/webm";
     if(typeof MediaRecorder!=="undefined"){
-      if(MediaRecorder.isTypeSupported("audio/mp4")){mimeType="audio/mp4";}
-      else if(MediaRecorder.isTypeSupported("audio/aac")){mimeType="audio/aac";}
-      else if(!MediaRecorder.isTypeSupported("audio/webm")){mimeType="";}
+      if(MediaRecorder.isTypeSupported("audio/mp4")) mimeType="audio/mp4";
+      else if(MediaRecorder.isTypeSupported("audio/aac")) mimeType="audio/aac";
+      else if(!MediaRecorder.isTypeSupported("audio/webm")) mimeType="";
     }
     try{mediaRec=mimeType?new MediaRecorder(stream,{mimeType:mimeType}):new MediaRecorder(stream);}
-    catch(e){mediaRec=new MediaRecorder(stream); mimeType=mediaRec.mimeType||"audio/webm";}
+    catch(e){mediaRec=new MediaRecorder(stream);}
     mediaRec.ondataavailable=function(e){if(e.data.size>0) chunks.push(e.data);};
     mediaRec.onstop=function(){
-      var blob=new Blob(chunks,{type:mimeType||"audio/webm"});
-      recordings[ci]=URL.createObjectURL(blob);
+      recordings[ci]=URL.createObjectURL(new Blob(chunks,{type:mimeType||"audio/webm"}));
       stream.getTracks().forEach(function(t){t.stop();});
       recOn=false;
-      document.getElementById("btnMic").classList.remove("rec");
-      document.getElementById("mIco").innerHTML="&#127908;";
+      document.getElementById("btnMic").className="B Brec sh";
+      document.getElementById("mIco").textContent="\u25cf";
       document.getElementById("mLbl").textContent="Rekam Lagi";
-      document.getElementById("btnSudah").style.display="flex";
-      setStep(3);
+      document.getElementById("btnSudah").className="B Bgreen sh";
+      setStep(2);
     };
     mediaRec.start(); recOn=true;
-    document.getElementById("btnMic").classList.add("rec");
-    document.getElementById("mIco").textContent="[ ]";
+    document.getElementById("btnMic").className="B Brec sh rec";
+    document.getElementById("mIco").textContent="||";
     document.getElementById("mLbl").textContent="Merekam... Tap untuk berhenti";
     document.getElementById("bubble").textContent="Aku mendengarkan... bacalah!";
-  })
-  .catch(function(){
-    document.getElementById("btnSudah").style.display="flex";
-    setStep(3);
+  }).catch(function(){
+    document.getElementById("btnSudah").className="B Bgreen sh";
+    setStep(2);
   });
 }
 function stopRec(){if(mediaRec&&recOn) mediaRec.stop();}
-
 function sudahBaca(){
-  document.getElementById("btnSudah").style.display="none";
-  document.getElementById("btnMic").style.display="none";
-  document.getElementById("btnNext").className="B Bn sh";
-  document.getElementById("nLbl").textContent=(ci===S.length-1)?"Dengarkan Rekamanmu ->":"Lanjut Ayat ->";
+  document.getElementById("btnSudah").className="B Bgreen";
+  document.getElementById("btnMic").className="B Brec";
+  document.getElementById("btnNext").className="B Bsec sh";
+  document.getElementById("nLbl").textContent=(ci===S.length-1)?"Dengarkan Rekamanmu":"Lanjut Ayat";
   playPraise(Math.floor(Math.random()*5));
   showVid("thumb"); confetti();
-  document.getElementById("bubble").className="bubble happy";
   document.getElementById("bubble").textContent="Masya Allah! Bagus sekali!";
 }
-
 function nextSeg(){
   if(ael){ael.pause();ael=null;}
-  document.getElementById("btnNext").className="B Bn";
-  document.getElementById("btnSudah").style.display="none";
-  document.getElementById("btnMic").style.display="none";
-  resetPlay(); setStep(1);
+  document.getElementById("btnNext").className="B Bsec";
+  document.getElementById("btnSudah").className="B Bgreen";
+  document.getElementById("btnMic").className="B Brec";
+  resetPlay(); setStep(0);
   if(ci>=S.length-1){goPbk();return;}
   ci++; loadSeg();
 }
-
 function loadSeg(){
   var seg=S[ci]; showVid("smile");
-  document.getElementById("anum").textContent=seg.num||"B";
-  document.getElementById("albl").textContent=seg.type==="intro"?"Pembuka - Dengarkan saja":"Ayat "+seg.num+" dari "+AYAT_COUNT;
+  var isBismillah=(seg.id==="bismillah"&&seg.type==="intro");
+  document.getElementById("cardBadge").textContent=isBismillah?"Bismillah":"Ayat "+seg.num+" dari "+AYAT_COUNT;
   document.getElementById("aar").textContent=seg.arabic;
   document.getElementById("alt").textContent=seg.latin;
   document.getElementById("atr").textContent=seg.arti;
-  document.getElementById("pLbl").textContent=seg.type==="intro"?"Dengarkan Bismillah":"Dengarkan Miss Diah";
-  document.getElementById("bubble").className="bubble";
+  document.getElementById("pLbl").textContent=isBismillah?"Dengarkan Bismillah":"Dengarkan Miss Diah";
   document.getElementById("bubble").textContent="Bismillah, yuk mulai!";
   buildProg(); setTimeout(guruPlay,800);
 }
-
 function buildProg(){
   var r=document.getElementById("prow"); r.innerHTML="";
-  var d0=document.createElement("div");
-  d0.className="pd"+(ci===0?" cur":ci>0?" done":"");
-  d0.textContent="B"; r.appendChild(d0);
-  S.filter(function(s){return s.type==="ayat";}).forEach(function(_,i){
+  S.forEach(function(s,i){
     var d=document.createElement("div");
-    d.className="pd"+(ci===i+1?" cur":ci>i+1?" done":"");
-    d.textContent=i+1; r.appendChild(d);
+    var lbl=s.type==="intro"?"B":String(s.num);
+    d.className="pd"+(ci===i?" cur":ci>i?" done":"");
+    d.textContent=lbl; r.appendChild(d);
   });
 }
-
 function goPbk(){
   document.getElementById("pg-main").style.display="none";
   document.getElementById("pg-pbk").style.display="block";
   playPraise(5);
   var list=document.getElementById("pbList"); list.innerHTML="";
   S.filter(function(s){return s.type==="ayat";}).forEach(function(seg,i){
-    var idx=i+1,hasRec=recordings[idx]!=null;
+    var idx=S.indexOf(seg),hasRec=recordings[idx]!=null;
     var div=document.createElement("div");
     div.className="pb-item"; div.id="pbi-"+idx;
     div.innerHTML="<div class='pb-num'>"+seg.num+"</div>"+
       "<div class='pb-info'><div class='pb-title'>"+seg.latin+"</div>"+
-      "<div class='pb-sub'>"+(hasRec?"Tap untuk dengarkan":"Tidak ada rekaman")+"</div></div>"+
-      "<span class='pb-icon'>"+(hasRec?"&#128266;":"&#10060;")+"</span>"+
+      "<div class='pb-sub'>"+(hasRec?"Tap untuk dengarkan":"Belum direkam")+"</div></div>"+
+      "<span class='pb-icon'>"+(hasRec?"&#9654;":"&#10060;")+"</span>"+
       "<span class='pb-wave'><span class='rw'></span><span class='rw'></span><span class='rw'></span><span class='rw'></span></span>";
-    if(hasRec){
-      (function(i2,url){div.onclick=function(){
-        var prev=document.querySelector(".pb-item.playing");
-        if(prev) prev.classList.remove("playing");
-        div.classList.add("playing");
-        var a=new Audio(url);
-        a.play().catch(function(){div.classList.remove("playing");});
-        a.onended=function(){div.classList.remove("playing");};
-      };})( idx, recordings[idx]);
-    }
+    if(hasRec){(function(ix,url){div.onclick=function(){
+      var prev=document.querySelector(".pb-item.playing");if(prev) prev.classList.remove("playing");
+      div.classList.add("playing");
+      var a=new Audio(url);a.play().catch(function(){div.classList.remove("playing");});
+      a.onended=function(){div.classList.remove("playing");};
+    };})(idx,recordings[idx]);}
     list.appendChild(div);
   });
 }
-
 function goUjian(){
   if(pel) pel.pause(); playPraise(6);
   document.getElementById("pg-pbk").style.display="none";
   document.getElementById("pg-ujian").style.display="block";
-  vs2=document.getElementById("vS2");
-  vs2.src="video/smile.mp4"; vs2.load(); vs2.play().catch(function(){});
+  if(!vs2){vs2=document.createElement("video");vs2.muted=true;vs2.loop=true;vs2.setAttribute("playsinline","");vs2.src="video/smile.mp4";
+    var wrap=document.querySelector("#pg-ujian .bubble-wrap");
+    var vw=document.createElement("div");vw.style.cssText="width:50px;height:50px;border-radius:50%;overflow:hidden;flex-shrink:0;position:relative";
+    vs2.style.cssText="width:100%;height:100%;object-fit:cover";vw.appendChild(vs2);
+    wrap.parentNode.insertBefore(vw,wrap);
+    vs2.load();vs2.play().catch(function(){});
+  }
 }
-
 function selesaiUjian(){
   document.getElementById("pg-ujian").style.display="none";
   document.getElementById("pg-win").style.display="block";
   playPraise(7); launchFW(); bigConfetti();
 }
-
 function confetti(){
   var w=document.getElementById("cfw");w.innerHTML="";w.style.display="block";
-  var col=["#52b788","#e9c46a","#f4a261","#2d6a4f","#a8d5c2","#f9b4a0"];
-  for(var i=0;i<28;i++){var p=document.createElement("div");p.className="cfp";p.style.cssText="left:"+Math.random()*100+"%;top:-10px;background:"+col[~~(Math.random()*col.length)]+";animation-delay:"+Math.random()*.8+"s;animation-duration:"+(1.5+Math.random())+"s";w.appendChild(p);}
-  setTimeout(function(){w.style.display="none";},3000);
+  var col=["#86E3CE","#FFDD94","#FA897B","#CCABD8","#D0E6A5"];
+  for(var i=0;i<32;i++){var p=document.createElement("div");p.className="cfp";p.style.cssText="left:"+Math.random()*100+"%;top:-10px;background:"+col[~~(Math.random()*col.length)]+";animation-delay:"+Math.random()*.8+"s;animation-duration:"+(1.5+Math.random())+"s";w.appendChild(p);}
+  setTimeout(function(){w.style.display="none";},3500);
 }
 function bigConfetti(){
   var w=document.getElementById("cfw");w.innerHTML="";w.style.display="block";
-  var col=["#e9c46a","#52b788","#f4a261","#ffffff","#a8d5c2"];
-  for(var i=0;i<60;i++){var p=document.createElement("div");p.className="cfp";p.style.cssText="left:"+Math.random()*100+"%;top:-10px;width:"+(6+Math.random()*8)+"px;height:"+(6+Math.random()*8)+"px;background:"+col[~~(Math.random()*col.length)]+";animation-delay:"+Math.random()*1.2+"s;animation-duration:"+(2+Math.random())+"s";w.appendChild(p);}
-  setTimeout(function(){w.style.display="none";},4000);
+  var col=["#86E3CE","#FFDD94","#FA897B","#CCABD8","#D0E6A5"];
+  for(var i=0;i<70;i++){var p=document.createElement("div");p.className="cfp";p.style.cssText="left:"+Math.random()*100+"%;top:-10px;width:"+(7+Math.random()*8)+"px;height:"+(7+Math.random()*8)+"px;background:"+col[~~(Math.random()*col.length)]+";animation-delay:"+Math.random()*1.2+"s;animation-duration:"+(2+Math.random())+"s";w.appendChild(p);}
+  setTimeout(function(){w.style.display="none";},4500);
 }
 var fwAnim=null;
 function launchFW(){
-  var c=document.getElementById("fwCanvas"); c.style.display="block";
-  var ctx=c.getContext("2d"); c.width=window.innerWidth; c.height=window.innerHeight;
-  var parts=[],cols=["#e9c46a","#52b788","#f4a261","#a8d5c2","#ffffff","#f9b4a0"];
+  var c=document.getElementById("fwCanvas");c.style.display="block";
+  var ctx=c.getContext("2d");c.width=window.innerWidth;c.height=window.innerHeight;
+  var parts=[],cols=["#86E3CE","#FFDD94","#FA897B","#CCABD8","#D0E6A5"];
   function Pt(x,y,col){this.x=x;this.y=y;this.color=col;this.vx=(Math.random()-.5)*8;this.vy=(Math.random()-.5)*8-4;this.alpha=1;this.r=Math.random()*3+2;}
-  var li=setInterval(function(){var x=Math.random()*c.width,y=Math.random()*c.height*.5;for(var i=0;i<60;i++) parts.push(new Pt(x,y,cols[~~(Math.random()*cols.length)]));  },600);
+  var li=setInterval(function(){var x=Math.random()*c.width,y=Math.random()*c.height*.5;for(var i=0;i<60;i++) parts.push(new Pt(x,y,cols[~~(Math.random()*cols.length)]));},600);
   function draw(){ctx.clearRect(0,0,c.width,c.height);parts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.15;p.alpha-=.015;ctx.globalAlpha=Math.max(0,p.alpha);ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();});ctx.globalAlpha=1;parts=parts.filter(function(p){return p.alpha>0;});fwAnim=requestAnimationFrame(draw);}
-  draw(); setTimeout(function(){clearInterval(li);},4000);
+  draw();setTimeout(function(){clearInterval(li);},4000);
 }
 </script>
 </body>
