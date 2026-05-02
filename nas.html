@@ -46,9 +46,9 @@ body{font-family:"Nunito",sans-serif;min-height:100vh;background:#FFF9F5}
 .B:active{transform:scale(.97)}
 .Bplay{background:#FA897B;color:#C0392B}
 .Bplay.on{background:#FA897B;color:white}
-.Brec{background:#FA897B;color:white;display:none}
-.Bsud{background:#86E3CE;color:#1A7A6A;display:none}
-.Bnxt{background:white;color:#888;border:2px solid #EEE;display:none}
+.Brec{background:#FA897B;color:white}
+.Bsud{background:#86E3CE;color:#1A7A6A}
+.Bnxt{background:white;color:#888;border:2px solid #EEE}
 .waves{display:none;gap:3px;align-items:center}
 .Bplay.on .waves{display:flex}
 .wb{width:3px;border-radius:2px;background:#C0392B;animation:sw .5s ease-in-out infinite}
@@ -102,11 +102,11 @@ body{font-family:"Nunito",sans-serif;min-height:100vh;background:#FFF9F5}
     <span id="pIco">&#9835;</span><span id="pLbl">Dengarkan Miss Diah</span>
     <span class="waves"><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span><span class="wb"></span></span>
   </button>
-  <button class="B Brec" id="btnMic" onclick="toggleMic()">
+  <button class="B Brec" id="btnMic" onclick="toggleMic()" style="display:none">
     <span id="mIco">&#9679;</span><span id="mLbl">Rekam Suaramu!</span>
   </button>
-  <button class="B Bsud" id="btnSud" onclick="sudahBaca()">&#10003; Sudah! Lanjut!</button>
-  <button class="B Bnxt" id="btnNxt" onclick="nextSeg()"><span id="nLbl">Lanjut</span></button>
+  <button class="B Bsud" id="btnSud" onclick="sudahBaca()" style="display:none">&#10003; Sudah! Lanjut!</button>
+  <button class="B Bnxt" id="btnNxt" onclick="nextSeg()" style="display:none"><span id="nLbl">Lanjut</span></button>
 </div></div>
 
 <div id="pg-pbk"><div class="W">
@@ -257,7 +257,7 @@ function startRec(){
       recordings[ci]=URL.createObjectURL(new Blob(chunks,{type:mt||"audio/webm"}));
       stream.getTracks().forEach(function(t){t.stop();});
       recOn=false;
-      document.getElementById("btnMic").className="B Brec";
+      
       document.getElementById("mIco").textContent="O";
       document.getElementById("mLbl").textContent="Rekam Lagi";
       showBtn("btnSud",true); setStep(2);
