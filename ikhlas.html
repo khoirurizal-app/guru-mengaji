@@ -218,9 +218,16 @@ function guruPlay(){
   document.getElementById("pLbl").textContent="Miss Diah membaca...";
   setStep(0);
   document.getElementById("bubble").textContent="Dengarkan baik-baik ya...";
-  ael.onended=ael.onerror=function(){
+  var fallbackTimer=setTimeout(function(){
+    if(document.getElementById("btnMic").style.display==="none"&&S[ci].type==="ayat"){
+      resetPlay();
+      document.getElementById("btnMic").style.display="flex";
+      setStep(1);
+    }
+  },8000);
+  ael.onended=function(){clearTimeout(fallbackTimer);var h=ael.onended;ael.onended=null;if(h){}
     resetPlay();
-    if(seg.type==="ayat"){
+    if(S[ci].type==="ayat"){
       document.getElementById("btnMic").style.display="flex";
       setStep(1);
       document.getElementById("bubble").textContent="Sekarang giliranmu! Tap tombol merah dan baca!";
@@ -230,7 +237,17 @@ function guruPlay(){
       document.getElementById("bubble").textContent="Sudah dengar Bismillahnya? Ayo lanjut!";
     }
   };
-  ael.play().catch(function(){resetPlay();document.getElementById("bubble").textContent="Tap tombol sekali lagi ya!";});
+  ael.onerror=function(){clearTimeout(fallbackTimer);resetPlay();
+    if(S[ci].type==="ayat"){document.getElementById("btnMic").style.display="flex";setStep(1);}
+    else{document.getElementById("btnNext").style.display="flex";}
+  };
+  ael.play().catch(function(){
+    clearTimeout(fallbackTimer);
+    resetPlay();
+    document.getElementById("bubble").textContent="Tap tombol sekali lagi ya!";
+    if(S[ci].type==="ayat"){document.getElementById("btnMic").style.display="flex";setStep(1);}
+    else{document.getElementById("btnNext").style.display="flex";}
+  });
 }
 function resetPlay(){
   document.getElementById("btnPlay").className="B Bmain";
