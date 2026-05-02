@@ -51,7 +51,7 @@ body{font-family:"Nunito",sans-serif;min-height:100vh;background:#FFF9F5}
 .Brec.rec{animation:pulse .9s ease-in-out infinite}
 @keyframes pulse{0%,100%{color:#2A9D8F;display:none}
 .Bsec{background:white;color:#888;border:2px solid #EEE;display:none}
-.Bsec.sh,.Bgreen.sh,.Brec.sh{display:flex;animation:pop .3s ease}.Bgreen.sh{display:flex;animation:pop .3s ease}.Bsec.sh{display:flex;animation:pop .3s ease}
+.Bsec.sh,.Bgreen.sh,.Brec.sh{display:flex;animation:pop .3s ease}.Bgreen{background:#52b788;color:white;display:none}.Bgreen.sh{display:flex;animation:pop .3s ease}.Bsec.sh{display:flex;animation:pop .3s ease}
 @keyframes pop{0%{transform:scale(.92)}100%{transform:scale(1)}}
 .waves{display:none;gap:3px;align-items:center}
 .Bmain.playing .waves{display:flex}
@@ -124,7 +124,7 @@ body{font-family:"Nunito",sans-serif;min-height:100vh;background:#FFF9F5}
   <button class="B Brec" id="btnMic" onclick="toggleMic()">
     <span id="mIco">&#9679;</span><span id="mLbl">Rekam Suaramu!</span>
   </button>
-  <button class="B Bgreen" id="btnSudah" onclick="sudahBaca()">&#10003; Sudah! Lanjut!</button>
+  <button class="B Bgreen" id="btnSudah" onclick="sudahBaca()" style="display:none">&#10003; Sudah! Lanjut!</button>
   <button class="B Bsec" id="btnNext" onclick="nextSeg()"><span id="nLbl">Lanjut</span></button>
 </div></div>
 
