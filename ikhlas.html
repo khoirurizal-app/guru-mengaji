@@ -200,12 +200,7 @@ function showBtn(id,show){
 function guruPlay(){
   if(ael&&!ael.paused){ael.pause();resetPlay();return;}
   var seg=S[ci];
-  var af=seg.audio_file?("audio/"+seg.audio_file):null;
-  ael=new Audio(af||PR[0]); // fallback
-  if(!af){
-    // use base64 audio
-    ael=new Audio(AU[seg.audio_idx]);
-  }
+  ael=new Audio(AU[seg.audio_idx]);
   ael.playbackRate=0.88;
   document.getElementById("btnPlay").className="B Bplay on";
   document.getElementById("pLbl").textContent="Miss Diah membaca...";
